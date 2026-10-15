@@ -49,4 +49,4 @@ npm run build
 node tests/browser.mjs
 ```
 
-Браузерный тест требует Chromium (`/usr/bin/chromium` или `CHROMIUM_PATH`), использует изолированную временную SQLite и порт 3101. Для проверки PostgreSQL выполните `TEST_DATABASE_URL=... node --test tests/postgres.test.mjs` на **отдельной тестовой базе**. Не используйте рабочую базу: тест создаёт и удаляет собственные записи.
+Браузерный тест требует Chromium (`/usr/bin/chromium` или `CHROMIUM_PATH`), использует изолированную временную SQLite и порт 3101. Для проверки PostgreSQL выполните `TEST_DATABASE_URL=... node --test tests/postgres.mjs` на **отдельной тестовой базе**. Не используйте рабочую базу: тест создаёт и удаляет собственные записи.
