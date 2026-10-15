@@ -1,0 +1,19 @@
+# Render Free web service + a free Neon Postgres database (created separately).
+# Never use ephemeral SQLite for this free service.
+services:
+  - type: web
+    name: club-700
+    runtime: node
+    plan: free
+    buildCommand: npm ci --cache /tmp/club-npm-cache --no-audit --no-fund && npm test && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: COACH_PIN
+        sync: false
